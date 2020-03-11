@@ -20,9 +20,17 @@ public class BrowserFactory {
             return new ChromeDriver();
 
         } else if (browserName.equalsIgnoreCase("Edge")) {
-                 WebDriverManager.edgedriver().setup();
+            WebDriverManager.edgedriver().setup();
             return new EdgeDriver();
         }
         return null;
+    }
+
+    public static void wait(int seconds) {
+        try {
+            Thread.sleep(1000 * seconds);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }
